@@ -6,8 +6,8 @@ services:
     ports:
       - "8081:8081"
     networks:
-      - mock-network
+      - billetera-seca_backend
 
 networks:
-  backend:
+  billetera-seca_backend:
     external: true

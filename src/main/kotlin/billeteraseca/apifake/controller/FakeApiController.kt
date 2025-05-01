@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/mock")
 class FakeApiController(private val fakeApiService: FakeApiService) {
 
-    @PostMapping("/debin")
-    fun simulateDebin(@RequestBody request: DebinRequest): ResponseEntity<Boolean> {
+    @PostMapping("/instant-debit")
+    fun simulateInstantDebit(@RequestBody request: DebinRequest): ResponseEntity<Boolean> {
         val approved = fakeApiService.processDebinRequest(request)
         return ResponseEntity.ok(approved)
     }
