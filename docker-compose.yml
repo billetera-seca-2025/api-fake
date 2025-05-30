@@ -1,5 +1,5 @@
 services:
-  api-mock:
+  fake-api:
     build:
       context: .
       dockerfile: Dockerfile
