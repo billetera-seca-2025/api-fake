@@ -38,10 +38,6 @@ class FakeApiService {
             return Result.failure(Exception("Invalid amount, must be greater than 0"))
         }
 
-        if (request.amount > 100000.0) {
-            return Result.failure(Exception("Instant Debit Request rejected: Amount exceeds limit"))
-        }
-
         // Validate CBU exists
         if (!cbuBalances.containsKey(request.cbu)) {
             return Result.failure(Exception("CBU ${request.cbu} does not exist"))
@@ -60,6 +56,6 @@ class FakeApiService {
         return Result.success(true)
     }
 
-    // Helper method to get current balance (useful for testing)
+    // Helper method to get current balance (for testing purposes)
     fun getBalance(cbu: String): Double? = cbuBalances[cbu]
 }
